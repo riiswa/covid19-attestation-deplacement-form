@@ -158,13 +158,16 @@
         <input type="number" style="width: 40px">/2020
         <br> (signature)
         <br>
-        <canvas id="signature" width="200px" height="200px"></canvas>
+        <canvas id="signature" width="200px" height="200px"></canvas><br>
+        <span class="badge badge-secondary d-print-none" onclick="signaturePad.clear()">Effacer</span>
 
     </p>
 
     <p class="text-center d-print-none">
         <button type="button" class="btn btn-primary" onclick="window.print()" style="margin-bottom: 10px">Télécharger/Imprimer</button>
-        <button type="button" class="btn btn-primary" onclick="save()" style="margin-bottom: 10px">Sauvegarder sur Google Drive</button>
+        <button type="button" class="btn btn-primary" onclick="save()" style="margin-bottom: 10px">Sauvegarder sur Google Drive</button> <br>
+        <button type="button" class="btn btn-danger" onclick="window.location.reload()" style="margin-bottom: 10px">Effacer</button>
+        
         <br>
         <a class="small" target="_blank" href="https://www.interieur.gouv.fr/Actualites/L-actu-du-Ministere/Attestation-de-deplacement-derogatoire-et-justificatif-de-deplacement-professionnel">Téléchargement de l'attestation originale sur interieur.gouv.fr</a>
     </p>
