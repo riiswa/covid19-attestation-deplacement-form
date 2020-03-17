@@ -164,6 +164,7 @@
 
     <p class="text-center d-print-none">
         <button type="button" class="btn btn-primary" onclick="window.print()">Télécharger/Imprimer</button>
+        <button type="button" class="btn btn-primary" onclick="save()">Sauvegarder sur Google Drive</button>
         <br>
         <a class="small" target="_blank" href="https://www.interieur.gouv.fr/Actualites/L-actu-du-Ministere/Attestation-de-deplacement-derogatoire-et-justificatif-de-deplacement-professionnel">Téléchargement de l'attestation originale sur interieur.gouv.fr</a>
     </p>
@@ -172,6 +173,17 @@
     <br>
         Le programme de test et le formulaire respectent les règles de la RGPD. Vous pouvez librement copier le code source du formulaire pour l'installer et le partager sur votre propre serveur ou en local sur votre machine.
     </p>
+    
+    <script>
+        function save() {
+            var gadget = new cloudprint.Gadget();
+              gadget.setPrintDocument("url", $('title').html(), window.location.href, "utf-8");
+              gadget.openPrintDialog();
+        }
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    
+    <script src="https://www.google.com/cloudprint/client/cpgadget.js"></script>
     
     
 
