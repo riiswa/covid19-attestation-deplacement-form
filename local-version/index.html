@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="lib/bootstrap.min.css">
     <title>ATTESTATION DE DÉPLACEMENT DÉROGATOIRE</title>
     <style>
         body {
@@ -79,10 +79,6 @@
 </head>
 
 <body id="body">
-    <div class="alert alert-danger d-print-none" role="alert">
-       Le ministère de l'Intérieur a indiqué que « seules sont valables les attestations officielles imprimées ou celles rédigées sur papier libre ». Même si ce projet ne <b>récolte aucune données</b>, nous avons décidez de ne plus laisser la possibilité aux utilisateurs de remplir les champs via ce lien. Le projet peut néanmoins être télécharger sur <a href="https://github.com/riiswa/covid19-attestation-deplacement-form">Github</a> (local-version) et être utiliser à des fins personnelles.
-    </div>
-    
     <h1 class="text-center h2">ATTESTATION DE DÉPLACEMENT DÉROGATOIRE</h1>
     <p class="text-center">En application de l’article 1er du décret du 16 mars 2020 portant réglementation des déplacements dans le cadre de la lutte contre la propagation du virus Covid-19 :
     </p>
@@ -93,23 +89,23 @@
                 <label for="name">Mme / M. </label>
             </div>
             <div class="col-sm-10">
-                <input type="text" id="name" placeholder="" name="name" disabled="disabled">
+                <input type="text" id="name" placeholder="" name="name">
             </div>
             <div class="w-100"></div>
             <div class="col-sm-2">
                 <label for="birth">Né(e) le : </label>
             </div>
             <div class="col-sm-10">
-                <input type="number" style="width: 40px" disabled="disabled">/
-                <input type="number" style="width: 40px" disabled="disabled">/
-                <input type="number" style="width: 70px" disabled="disabled">
+                <input type="number" style="width: 40px">/
+                <input type="number" style="width: 40px">/
+                <input type="number" style="width: 70px">
             </div>
             <div class="w-100"></div>
             <div class="col-sm-2">
                 <label for="place">Demeurant : </label>
             </div>
             <div class="col-sm-10">
-                <textarea id="place" rows="3" oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"' disabled="disabled"></textarea>
+                <textarea id="place" rows="3" oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"'></textarea>
             </div>
         </div>
     </div>
@@ -118,21 +114,21 @@
     <div class="container-full">
         <div class="row">
             <div class="col-1">
-                <input type="checkbox" class="form-check-input" id="check1" disabled="disabled">
+                <input type="checkbox" class="form-check-input" id="check1">
             </div>
             <div class="col-11">
                 <label class="form-check-label" for="check1">déplacements entre le domicile et le lieu d’exercice de l’activité professionnelle, lorsqu’ils sont indispensables à l’exercice d’activités ne pouvant être organisées sous forme de télétravail (sur justificatif permanent) ou déplacements professionnels ne pouvant être différés ;</label>
             </div>
             <div class="w-100"></div>
             <div class="col-1">
-                <input type="checkbox" class="form-check-input" id="check2" disabled="disabled">
+                <input type="checkbox" class="form-check-input" id="check2">
             </div>
             <div class="col-11">
                 <label class="form-check-label" for="check2">déplacements pour effectuer des achats de première nécessité dans des établissements autorisés (liste sur gouvernement.fr) ;</label>
             </div>
             <div class="w-100"></div>
             <div class="col-1">
-                <input type="checkbox" class="form-check-input" id="check3" disabled="disabled">
+                <input type="checkbox" class="form-check-input" id="check3">
             </div>
             <div class="col-11">
                 <label class="form-check-label" for="check3">déplacements pour motif de santé </label>
@@ -140,7 +136,7 @@
             <div class="w-100"></div>
             <div class="w-100"></div>
             <div class="col-1">
-                <input type="checkbox" class="form-check-input" id="check4" disabled="disabled">
+                <input type="checkbox" class="form-check-input" id="check4">
             </div>
             <div class="col-11">
                 <label class="form-check-label" for="check4">déplacements pour motif familial impérieux, pour l’assistance aux personnes vulnérables ou la garde d’enfants </label>
@@ -148,7 +144,7 @@
             <div class="w-100"></div>
             <div class="w-100"></div>
             <div class="col-1">
-                <input type="checkbox" class="form-check-input" id="check5" disabled="disabled">
+                <input type="checkbox" class="form-check-input" id="check5">
             </div>
             <div class="col-11">
                 <label class="form-check-label" for="check5">déplacements brefs, à proximité du domicile, liés à l’activité physique individuelle des personnes, à l’exclusion de toute pratique sportive collective, et aux besoins des animaux de compagnie. </label>
@@ -157,9 +153,9 @@
     </div>
     <br>
     <p class="text-right">Fait à
-        <input type="text" disabled="disabled">, le
-        <input type="number" style="width: 40px" disabled="disabled">/
-        <input type="number" style="width: 40px" disabled="disabled">/2020
+        <input type="text">, le
+        <input type="number" style="width: 40px">/
+        <input type="number" style="width: 40px">/2020
         <br> (signature)
         <br>
         <canvas id="signature" width="200px" height="200px"></canvas><br>
@@ -188,10 +184,17 @@
               gadget.openPrintDialog();
         }
     </script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="lib/jquery.min.js"></script>
     
-    <script src="https://www.google.com/cloudprint/client/cpgadget.js"></script>
+    <script src="lib/cpgadget.js"></script>
     
+    
+
+    <script src="lib/signature_pad.min.js"></script>
+    <script>
+        var canvas = document.querySelector("canvas");
+        var signaturePad = new SignaturePad(canvas);
+    </script>
 
 </body>
 
