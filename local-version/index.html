@@ -184,11 +184,16 @@
               gadget.openPrintDialog();
         }
     </script>
-    <script src="lib/jquery.min.js"></script>
     
+    <script src="lib/jquery.min.js"></script>
     <script src="lib/cpgadget.js"></script>
     
-    
+     <!-- Only accept one checkbox -->
+    <script>
+        $('input.form-check-input').on('change', function() {
+            $('input.form-check-input').not(this).prop('checked', false);  
+        });
+    </script>
 
     <script src="lib/signature_pad.min.js"></script>
     <script>
